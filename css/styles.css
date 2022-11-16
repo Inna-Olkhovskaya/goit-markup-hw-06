@@ -46,7 +46,7 @@ header {
 .accent {
   color: var(--brand-accent);
 }
-/* Site navigation */
+/*-----------------Site navigation------------*/
 .site-nav {
   display: flex;
 }
@@ -238,7 +238,6 @@ img {
 
   background: #f5f4fa;
 }
-
 .special-title {
   font-weight: 700;
   font-size: 14px;
@@ -250,7 +249,6 @@ img {
 
   color: #212121;
 }
-
 .special-text {
   font-size: 14px;
   line-height: 1.71;
@@ -403,11 +401,9 @@ img {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .clients-item:not(:first-child) {
   margin-left: 30px;
 }
-
 .clients-icon {
   fill: currentColor;
 }
@@ -792,6 +788,10 @@ footer {
   align-items: center;
   justify-content: center;
 
+  position: absolute;
+  top: 0;
+  right: 0;
+
   width: 30px;
   height: 30px;
   margin-right: 8px;
@@ -816,6 +816,8 @@ footer {
 /*----------------------Modal Form----------------*/
 
 .modal-form {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -873,9 +875,7 @@ footer {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:hover + .form-icon {
-  fill: var(--brand-accent);
-}
+.form-input:hover + .form-icon,
 .form-input:focus + .form-icon {
   fill: var(--brand-accent);
 }
@@ -908,7 +908,9 @@ textarea {
 }
 
 .form-agreement {
-  margin-top: 20px;
+  position: relative;
+
+  margin-top: 10px;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
@@ -945,10 +947,14 @@ textarea {
 }
 
 .checkbox-icon {
-  fill: #ffffff;
+  position: absolute;
+  top: 20%;
+  left: -22px;
+
+  fill: var(--brand-background-main);
   border: 2px solid #212121;
   border-radius: 2px;
-  background-color: #ffffff;
+  background-color: var(--brand-background-main);
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -957,10 +963,11 @@ textarea {
 
 .checkbox:checked + .checkbox-icon {
   border-radius: 2px;
+  background-origin: border-box;
+
   fill: var(--brand-background-main);
   background-color: var(--brand-accent);
   border: 2px solid var(--brand-accent);
-  background-origin: border-box;
 }
 
 .agreement-label {
@@ -974,8 +981,28 @@ textarea {
 }
 
 .form-agreement a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+
   color: var(--brand-accent);
-  text-decoration: underline;
+  }
+
+.agreement-link::after {
+  position: absolute;
+  content: "";
+
+  right: 0;
+  width: 115px;
+  height: 1px;
+  margin-top: 18px;
+
+  border-radius: 2px;
+  background-color: var(--brand-accent);
 }
 
 .form-btn {
