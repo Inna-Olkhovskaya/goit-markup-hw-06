@@ -758,13 +758,17 @@ footer {
 
   opacity: 1;
   visibility: visible;
+  
+  transform: scale(1);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
+  transform: scale(0);
   pointer-events: none;
 }
 
@@ -870,7 +874,7 @@ footer {
   position: absolute;
   top: 50%;
   left: 15px;
-  fill: currentColor;
+  fill: #212121;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -949,7 +953,7 @@ textarea {
 .checkbox-icon {
   position: absolute;
   top: 20%;
-  left: -22px;
+  left: -25px;
 
   fill: var(--brand-background-main);
   border: 2px solid #212121;
@@ -990,7 +994,7 @@ textarea {
   text-decoration: none;
 
   color: var(--brand-accent);
-  }
+}
 
 .agreement-link::after {
   position: absolute;
